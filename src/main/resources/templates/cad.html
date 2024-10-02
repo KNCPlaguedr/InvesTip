@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Cadastro</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .btn-close {
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            position: absolute; /* Posiciona o botão no canto superior direito */
+            right: 20px; /* Distância do lado direito */
+            top: 20px; /* Distância do topo */
+            cursor: pointer;
+        }
+
+        .login-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #25088d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            background-color: #3a1e9e;
+        }
+
+        .login-form p {
+            margin-top: 10px;
+        }
+
+        .login-form a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .login-form a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+   <a href="register.html"><button class="btn-close" aria-label="Close">✖</button></a>
+
+    <div class="container">
+        <form class="login-form" action="/home/login" method="GET">
+            <h2>Criar Conta</h2>
+            <input type="text" placeholder="Nome Completo" required>
+            <input type="email" placeholder="E-mail" required>
+            <input type="text" placeholder="Usuário" required>
+            <input type="password" placeholder="Senha" required>
+            <input type="password" placeholder="Confirme a Senha" required>
+            <button type="submit">Registrar</button>
+            <p>Já tem uma conta? <a href="/home/login">Fazer Login</a></p>
+        </form>
+    </div>
+</body>
+
+</html>

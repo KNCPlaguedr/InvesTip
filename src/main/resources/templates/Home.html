@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="preconnect" href="https://pixel.byspotify.com" crossorigin="true" defer="">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            body {
+                padding-top: 70px;
+
+
+            }
+
+
+            .title {
+                text-align: center;
+                margin: 20px 0;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                font-weight: bold;
+
+            }
+
+            hr {
+                margin: 20px 0;
+            }
+
+            .container {
+                background-color: #ffffff;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .footer {
+
+
+                padding: 20px 0;
+            }
+
+            .footer a {
+                text-decoration: none;
+            }
+
+            .footer a:hover {
+                text-decoration: underline;
+            }
+
+            .table {
+                margin-top: 20px;
+                border-radius: 15px;
+            }
+
+            .container {
+                color: black;
+            }
+
+
+
+            body.light {
+                background-color: #f8f9fa;
+                color: black;
+            }
+
+            body.dark {
+                background-color: #1F2326;
+                color: white;
+            }
+
+            .theme-toggle {
+                padding: 10px 20px;
+                cursor: pointer;
+                background-color: #f8f9fa;
+            }
+
+            .theme-toggle:hover {
+                background-color: black;
+            }
+
+            .message{
+                text-align: center;
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/home">
+                    <img src="graphy.png" alt="Logo" width="30" height="24"
+                         class="d-inline-block align-text-top">
+                    InvesTip
+                </a>
+
+                <div class="message">Bem-Vindo {} ao InvesTip</div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                     aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/home/login">Cadastrar</a>
+                            </li>
+
+
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                    Dicas de investimento
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Dicas de Investimento</a></li>
+                                    <li><a class="dropdown-item" href="/home/onde-investir">Onde Investir</a></li>
+                                    <li><a class="dropdown-item" href="/home/como-investir">Como Investir</a></li>
+                                </ul>
+                            </li>
+
+                            <p></p>
+
+                            <li class="nav-item">
+                                <button class="btn theme-toggle" onclick="toggleTheme()">Alternar Tema</button>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="title">
+            <h1>Bem-vindo ao InvesTip</h1>
+        </div>
+
+        <div class="container">
+
+            <p>Maximize seus investimentos e veja seu dinheiro crescer com juros compostos. Nossa calculadora simples
+                permite que você simule cenários, ajustando valores, taxas e prazos, para entender como seu patrimônio
+                pode evoluir. Quer planejar sua aposentadoria ou poupar para um grande objetivo? Estamos aqui para ajudar!
+                Explore nossa calculadora e veja como decisões inteligentes hoje podem moldar seu futuro financeiro.</p>
+
+        </div>
+
+        <div class="container mt-4">
+            <form action="">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="inputCapitalInicial" class="form-label">Valor Inicial</label>
+                        <input type="number" class="form-control" name="inputCapitalInicial" id="inputCapitalInicial"
+                               placeholder="R$ 0,00" value="0">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="tipoJuros" class="form-label">Juros</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" name="tipoJuros" id="tipoJuros" placeholder="0,00"
+                                   value="0">
+                            <select id="tipoJurosPeriodo" name="tipoJurosPeriodo" class="form-select">
+                                <option value="mensal">% Mensal</option>
+                                <option value="anual">% Anual</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="inputCapitalContinuo" class="form-label">Aporte Mensal</label>
+                        <input type="number" class="form-control" name="inputCapitalContinuo" id="inputCapitalContinuo"
+                               placeholder="R$ 0,00" value="0">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="tipoPeriodo" class="form-label">Período</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" name="tipoPeriodo" id="tipoPeriodo" placeholder="0"
+                                   value="0">
+                            <select id="tipoPeriodoMedida" name="tipoPeriodoMedida" class="form-select">
+                                <option value="meses">Meses</option>
+                                <option value="anos">Anos</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-primary" id="calcularBtn">Calcular</button>
+                    <button type="reset" class="btn btn-secondary">Limpar</button>
+                </div>
+
+                <div class="collapse mt-3" id="collapseExample">
+                    <table class="table table-dark table-striped" id="resultTable">
+                        <thead>
+                            <tr>
+                                <th>Evento</th>
+                                <th>Valores</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Total Investido</td>
+                                <td id="totalInvestido">R$ 0,00</td>
+                            </tr>
+                            <tr>
+                                <td>Total Ganho em Juros</td>
+                                <td id="totalGanhoJuros">R$ 0,00</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td id="totalFinal">R$ 0,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+
+        <footer class="footer text-center mt-4">
+            <div class="container">
+                <p class="mb-0">© 2024 InvesTip. Todos os direitos reservados.</p>
+                <p class="mb-0">
+                    <a href="#">Política de Privacidade</a> |
+                    <a href="#">Termos de Serviço</a>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+        <script>
+                                    // Função para salvar o tema em um cookie
+                                    function setCookie(name, value, days) {
+                                        const date = new Date();
+                                        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));  // Expiração em "days" dias
+                                        document.cookie = name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
+                                    }
+
+                                    // Função para obter o valor de um cookie
+                                    function getCookie(name) {
+                                        const value = `; ${document.cookie}`;
+                                        const parts = value.split(`; ${name}=`);
+                                        if (parts.length === 2)
+                                            return parts.pop().split(';').shift();
+                                    }
+
+                                    // Função para alternar o tema
+                                    function toggleTheme() {
+                                        const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
+                                        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                                        document.body.classList.remove(currentTheme);
+                                        document.body.classList.add(newTheme);
+                                        setCookie('theme', newTheme, 7);  // Salva o tema no cookie com validade de 7 dias
+                                    }
+
+                                    // Função para carregar o tema do cookie quando a página for aberta
+                                    function loadTheme() {
+                                        const savedTheme = getCookie('theme');
+                                        if (savedTheme) {
+                                            document.body.classList.add(savedTheme);
+                                        } else {
+                                            // Se não houver cookie, aplica o tema claro por padrão
+                                            document.body.classList.add('light');
+                                        }
+                                    }
+
+                                    // Chama a função para carregar o tema quando a página é carregada
+                                    window.onload = loadTheme;
+        </script>
+
+
+
+        <script>
+            document.getElementById("calcularBtn").addEventListener("click", function () {
+                // Capturando os valores dos inputs
+                const capitalInicial = parseFloat(document.getElementById("inputCapitalInicial").value);
+                const aporteMensal = parseFloat(document.getElementById("inputCapitalContinuo").value);
+                let juros = parseFloat(document.getElementById("tipoJuros").value);
+                const tipoJurosPeriodo = document.getElementById("tipoJurosPeriodo").value;
+                let periodo = parseInt(document.getElementById("tipoPeriodo").value);
+                const tipoPeriodoMedida = document.getElementById("tipoPeriodoMedida").value;
+
+                // Validação dos campos
+
+                if (isNaN(aporteMensal) || aporteMensal <= 0) {
+                    alert("O aporte mensal deve ser maior que 0.");
+                    return;
+                }
+                if (isNaN(juros) || juros <= 0) {
+                    alert("A taxa de juros deve ser maior que 0.");
+                    return;
+                }
+                if (isNaN(periodo) || periodo <= 0) {
+                    alert("O período deve ser maior que 0.");
+                    return;
+                }
+
+                // Ajuste da taxa de juros se for anual
+                if (tipoJurosPeriodo === 'anual') {
+                    juros = juros / 12; // Convertendo taxa anual para mensal
+                }
+                juros = juros / 100; // Convertendo de percentual para decimal
+
+                // Ajuste do período se for em anos
+                if (tipoPeriodoMedida === 'anos') {
+                    periodo = periodo * 12; // Convertendo anos para meses
+                }
+
+                // Cálculo do montante final usando a fórmula de juros compostos
+                const montanteFinal = capitalInicial * Math.pow((1 + juros), periodo) +
+                        aporteMensal * (Math.pow((1 + juros), periodo) - 1) / juros * (1 + juros);
+
+                // Cálculo do total investido
+                const totalInvestido = capitalInicial + aporteMensal * periodo;
+
+                // Cálculo do total ganho em juros
+                const totalGanhoJuros = montanteFinal - totalInvestido;
+
+                // Função para formatar os números no formato BRL
+                function formatarNumero(valor) {
+                    return valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+                }
+
+                // Exibindo os resultados na tabela
+                document.getElementById('totalInvestido').textContent = formatarNumero(totalInvestido);
+                document.getElementById('totalGanhoJuros').textContent = formatarNumero(totalGanhoJuros);
+                document.getElementById('totalFinal').textContent = formatarNumero(montanteFinal);
+
+                // Mostrar a tabela de resultados
+                document.getElementById('collapseExample').classList.add('show');
+            });
+        </script>
+
+
+    </body>
+
+</html>

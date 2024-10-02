@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            padding-top: 70px;
+            background-color: #f8f9fa;
+            
+        }
+
+
+        .title {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            
+        }
+
+        hr {
+            margin: 20px 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+           
+           
+            padding: 20px 0;
+        }
+        .footer a {
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .table {
+            margin-top: 20px;
+            border-radius: 15px;
+        }
+        .container{
+            color: black;
+        }
+
+
+        body.light {
+            background-color: #f8f9fa;
+            color: black;
+        }
+
+        body.dark {
+            background-color: #1F2326;
+            color: white;
+        }
+
+        .theme-toggle {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #f8f9fa;
+        }
+
+        .theme-toggle:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/home">
+                    <img src="graphy.png" alt="Logo" width="30" height="24"
+                         class="d-inline-block align-text-top">
+                    InvesTip
+                </a>
+
+                
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                     aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/home/login">Cadastrar</a>
+                            </li>
+
+
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                    Dicas de investimento
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Dicas de Investimento</a></li>
+                                    <li><a class="dropdown-item" href="/home/onde-investir">Onde Investir</a></li>
+                                    <li><a class="dropdown-item" href="/home/como-investir">Como Investir</a></li>
+                                </ul>
+                            </li>
+
+                            <p></p>
+
+                            <li class="nav-item">
+                                <button class="btn theme-toggle" onclick="toggleTheme()">Alternar Tema</button>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    <div class="container mt-4">
+        <div class="text-center mb-5">
+            <h1>InvestTip</h1>
+            <p class="lead">Dicas e informações para ajudá-lo a tomar melhores decisões de investimento.</p>
+        </div>
+
+        <!-- Seção Renda Fixa -->
+        <div class="card">
+            <div class="card-header">
+                Renda Fixa (Baixo Risco)
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"><a href="https://www.tesourodireto.com.br/">Tesouro Direto</a></h5>
+                <p class="card-text">Títulos públicos emitidos pelo governo. Tesouro Selic e Tesouro IPCA são as principais opções.</p>
+                <h5 class="card-title">CDB</h5>
+                <p class="card-text">Oferecido por bancos com rendimento atrelado ao CDI. Algumas opções têm liquidez diária.</p>
+                <h5 class="card-title">LCI/LCA</h5>
+                <p class="card-text">Isentas de Imposto de Renda, mas com prazos de carência. Ótima opção de renda fixa.</p>
+            </div>
+        </div>
+
+        <!-- Seção Fundos de Investimento -->
+        <div class="card">
+            <div class="card-header">
+                Fundos de Investimento (Risco Moderado)
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Fundos DI</h5>
+                <p class="card-text">Investem em títulos de renda fixa, com baixo risco.</p>
+                <h5 class="card-title"><a href="https://conteudos.xpi.com.br/aprenda-a-investir/relatorios/fundo-multimercado-o-que-e-e-como-funciona/">Fundos Multimercado</a></h5>
+                <p class="card-text">Mesclam ativos de renda fixa e variável, com maior potencial de retorno.</p>
+                <h5 class="card-title"><a href="https://lp.xpi.com.br/fii-top15">Fundos Imobiliários (FIIs)</a></h5>
+                <p class="card-text">Investimento coletivo em imóveis com foco no recebimento de aluguéis.</p>
+            </div>
+        </div>
+
+        <!-- Seção Ações -->
+        <div class="card">
+            <div class="card-header">
+                Ações (Alto Risco)
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"><a href="https://www.google.com/search?q=a%C3%A7%C3%B5es+vale">Ações Individuais</a></h5>
+                <p class="card-text">Compra de participação em empresas como Vale e Petrobras.</p>
+                <h5 class="card-title"><a href="https://conteudos.xpi.com.br/aprenda-a-investir/relatorios/o-que-e-etf/">ETFs</a></h5>
+                <p class="card-text">Fundos que replicam índices, como o BOVA11, que segue o Ibovespa.</p>
+            </div>
+        </div>
+
+        <!-- Mais seções podem ser adicionadas da mesma forma -->
+        
+        <!-- Footer -->
+        <footer class="footer text-center mt-4">
+            <div class="container">
+                <p class="mb-0">© 2024 InvesTip. Todos os direitos reservados.</p>
+                <p class="mb-0">
+                    <a href="#">Política de Privacidade</a> |
+                    <a href="#">Termos de Serviço</a>
+                </p>
+            </div>
+        </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        // Função para salvar o tema em um cookie
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));  // Expiração em "days" dias
+            document.cookie = name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
+        }
+
+        // Função para obter o valor de um cookie
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        // Função para alternar o tema
+        function toggleTheme() {
+            const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.body.classList.remove(currentTheme);
+            document.body.classList.add(newTheme);
+            setCookie('theme', newTheme, 7);  // Salva o tema no cookie com validade de 7 dias
+        }
+
+        // Função para carregar o tema do cookie quando a página for aberta
+        function loadTheme() {
+            const savedTheme = getCookie('theme');
+            if (savedTheme) {
+                document.body.classList.add(savedTheme);
+            } else {
+                // Se não houver cookie, aplica o tema claro por padrão
+                document.body.classList.add('light');
+            }
+        }
+
+        // Chama a função para carregar o tema quando a página é carregada
+        window.onload = loadTheme;
+    </script>
+
+</body>
+
+</html>
