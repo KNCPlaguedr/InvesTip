@@ -161,13 +161,18 @@
 
 
     <div class="container">
-        <form class="login-form" action="/home" method="GET">
+       <form class="login-form" action="#" th:action="@{/home/login}" method="post">
             <h2>Login</h2>
-            <input type="text" placeholder="Usuário" name="usuario" required>
-            <input type="password" placeholder="Senha" name="senha" required>
+            <input type="text" id="username" name="username" placeholder="Usuário" required>
+            <input type="password" id="password" name="password" placeholder="Senha" required>
             <button type="submit">Entrar</button>
             <p>Não tem uma conta? <a href="/home/cadastrar">Criar Conta</a></p>
         </form>
+        
+         <div th:if="${error}">
+        <p th:text="${error}" style="color: red;"></p>
+    </div>
+        
     </div>
     
 

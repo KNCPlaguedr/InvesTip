@@ -100,7 +100,10 @@
                     InvesTip
                 </a>
 
-                <div class="message">Bem-Vindo {} ao InvesTip</div>
+             <!-- Mostra o nome de usuário apenas se ele estiver logado (username presente) -->
+<div class="message" th:if="${username != null}" th:text="'Bem-Vindo ' + ${username} + ' ao InvesTip'"></div>
+
+
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
