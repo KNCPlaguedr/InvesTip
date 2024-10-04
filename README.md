@@ -8,6 +8,7 @@ Rest API
 HTML, CSS e JavaScript
 Thymeleaf
 MySQL
+
 👨‍💻 Desenvolvedor: Luiz Vinicius
 
 🎯 Objetivo do Software:
