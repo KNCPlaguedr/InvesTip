@@ -90,5 +90,9 @@
         </configuration> 
       </plugin> 
     </plugins> 
-  </build> 
+    <finalName>${artifactId}</finalName> 
+    
+  </build>
+  
+ <!-- <packaging>war</packaging> --> <!-- posso remover este negócio aqui para executar pelo netbeans -->
 </project> 
